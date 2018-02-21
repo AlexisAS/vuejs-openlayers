@@ -47,6 +47,7 @@ const VueOpenlayers = {
   **   - zoom (Number)
   **   - minZoom (Number)
   **   - maxZoom (Number)
+  **   - projection (Object)
   */
   addView: function (setting) {
     if (this.Views[setting.element] !== undefined) {
@@ -58,7 +59,8 @@ const VueOpenlayers = {
       center: (setting.center === undefined) ? [0, 0] : setting.center,
       zoom: (setting.zoom === undefined) ? 4 : setting.zoom,
       minZoom: (setting.minZoom === undefined) ? 4 : setting.minZoom,
-      maxZoom: (setting.maxZoom === undefined) ? 18 : setting.maxZoom
+      maxZoom: (setting.maxZoom === undefined) ? 18 : setting.maxZoom,
+      projection: (setting.projection === undefined) ? new OlProjection({code: 'EPSG:3857', units: 'm'}) : new OlProjection(setting.projection),
     })
 
     return this.Views[setting.element]
