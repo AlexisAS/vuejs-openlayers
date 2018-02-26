@@ -14,6 +14,7 @@ import OlFeature from 'ol/feature'
 import OlPoint from 'ol/geom/point'
 import OlStyle from 'ol/style/style'
 import OlIcon from 'ol/style/icon'
+import OlProjection from 'ol/proj/projection'
 
 const VueOpenlayers = {
   install: function (Vue) {
